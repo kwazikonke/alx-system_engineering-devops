@@ -1,10 +1,3 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
-# Script tp display all IPV4 IPS on a machine
-
-ifconfig -a | grep inet | cut -d: -f2 | cut -d" "  -f1
-=======
-# Displays all acive IPv4 addresses on the machine.
-
-ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
->>>>>>> d502a2325d17fd005178ced7039362c5e49256d7
+# displays all active IPv4 IPs on the machine it’s executed o
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | awk '{print $2}'
